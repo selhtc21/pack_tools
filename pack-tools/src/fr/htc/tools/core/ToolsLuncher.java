@@ -9,10 +9,12 @@ public class ToolsLuncher {
 	private static Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		int choice = 0;
+		int choice = -1;
 		do {
 			 choice = printMenuAndCatchUserChoice();
-			 OperationSwitcher.switchTo(OperationType.valueOf(choice));
+			 OperationType opType = OperationType.valueOf(choice);
+			 
+			 OperationSwitcher.switchTo(opType);
 			
 		} while (choice != 0);
 		scanner.close();

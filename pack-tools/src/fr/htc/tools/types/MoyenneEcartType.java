@@ -1,11 +1,12 @@
 package fr.htc.tools.types;
 
-public class Moyenne_EcartType implements Operation {
+public class MoyenneEcartType implements Operation {
 
 	@Override
 	public void process(String title) {
 		// TODO Auto-generated method stub
 		System.out.println("Je suis dans le choix : " + title);
+		System.out.print("Entrer la taille du tableau : ");
 
 		int j = scanner.nextInt();
 		int somme = 0;

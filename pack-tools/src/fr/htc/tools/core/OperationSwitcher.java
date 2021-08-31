@@ -4,7 +4,7 @@ import fr.htc.tools.types.Addition;
 import fr.htc.tools.types.Division;
 import fr.htc.tools.types.EquationSecondDegree;
 import fr.htc.tools.types.Factoriel;
-import fr.htc.tools.types.Moyenne_EcartType;
+import fr.htc.tools.types.MoyenneEcartType;
 import fr.htc.tools.types.Multiplication;
 import fr.htc.tools.types.Operation;
 import fr.htc.tools.types.PGCD;
@@ -42,7 +42,7 @@ public class OperationSwitcher {
 			op = new ValeurMax();
 			break;
 		case MOYENNE_ECART_TYPE:
-			op = new Moyenne_EcartType();
+			op = new MoyenneEcartType();
 			break;
 		case QUITTER:
 			break;

@@ -6,7 +6,6 @@ public class ValeurMax implements Operation {
 
 	@Override
 	public void process(String title) {
-		// TODO Auto-generated method stub
 		System.out.println("Je suis dans le choix : " + title);
 		System.out.println("entrer la taille du tableau");
 		int j= scanner.nextInt();
@@ -15,7 +14,7 @@ public class ValeurMax implements Operation {
 		int tableau[]= new int[j];
 		
 		for (int i=0; i<tableau.length;i++) {
-			System.out.println("entrer le "+ i++ +" élément du tableau");
+			System.out.println("entrer le "+ (i +1) +" élément du tableau");
 			tableau[i] = scanner.nextInt();
 			
 		}
