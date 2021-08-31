@@ -28,7 +28,7 @@ public class ToolsLuncher {
 	private static int printMenuAndCatchUserChoice() {
 		System.out.println("\n\n\n\n");
 		System.out.println("*****************************************************************");
-		System.out.println("Bienvenue à l’application : ‘’ Opérations Mathématiques ‘’");
+		System.out.println("Bienvenue ï¿½ lï¿½application : ï¿½ï¿½ Opï¿½rations Mathï¿½matiques ï¿½ï¿½");
 		System.out.println("");
 		System.out.println("\t- Equation 2 Deg.                 \t\t\tTapez 1");
 		System.out.println("\t- Factoriel                       \t\t\tTapez 2");

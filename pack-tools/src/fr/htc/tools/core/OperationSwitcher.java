@@ -15,24 +15,31 @@ public class OperationSwitcher {
 	public static void switchTo(OperationType opType) {
 		Operation op = null;
 		switch (opType) {
+		
 		case EQUATION_SECOND_DEGRE:
 			op = new EquationSecondDegree();
 			break;
+			
 		case FACTORIEL:
 			op = new Factoriel();
 			break;
+			
 		case PGCD:
 			op = new PGCD();
 			break;
+			
 		case MAX_TABLEAU:
 			op = new ValeurMax();
 			break;
+			
 		case MOYENNE_ECART_TYPE:
 			op = new MoyenneEcartType();
 			break;
+			
 		case PERSON_LIST:
 			op = new PersonList();
 			break;
+	
 		case QUITTER:
 			op = new Quitter();
 			break;
