@@ -2,16 +2,13 @@ package fr.htc.tools.types.enums;
 
 public enum OperationType {
 	QUITTER(0, "Quitter"),
-	ADDITION(1, "Addition"),
-	SOUSTRACTION(2, "Soustraction"),
-	PRODUIT(3, "Multiplcation"),
-	QOTIENT(4, "Division"),
-	EQUATION_SECOND_DEGRE(5, "Equation de second degre"),
-	FACTORIEL(6, "Factoriel"),
-	PGCD(7, "Plus grand commun diviseur"),
-	MAX_TABLEAU(8, "grande valeur d'un tableau"),
-	MOYENNE_ECART_TYPE(9, "moyenne_ecart type"),
-	UNKNOWN(99, "Unknown");
+	EQUATION_SECOND_DEGRE(1, "Equation de second degre"),
+	FACTORIEL(2, "Factoriel"),
+	PGCD(3, "Plus grand commun diviseur"),
+	MAX_TABLEAU(4, "grande valeur d'un tableau"),
+	MOYENNE_ECART_TYPE(5, "moyenne_ecart type"),
+	PERSON_LIST(6, "Person List"),
+	UNKNOWN(7, "Unknown");
 
 	private int id;
 	private String title;
@@ -30,10 +27,14 @@ public enum OperationType {
 	}
 
 	public static OperationType valueOf(int id) {
-		if (id < 0 || id > 9) {
-			return OperationType.values()[10];
+		if (id < 0 || id >= size()) {
+			return OperationType.values()[size() -1];
 		}
 		return OperationType.values()[id];
+	}
+	
+	public static int size() {
+		return OperationType.values().length;
 	}
 
 }
