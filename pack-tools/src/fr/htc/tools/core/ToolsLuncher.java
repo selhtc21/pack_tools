@@ -1,3 +1,4 @@
+
 package fr.htc.tools.core;
 
 import java.util.Scanner;
@@ -6,16 +7,21 @@ import fr.htc.tools.types.Operation;
 import fr.htc.tools.types.enums.OperationType;
 
 public class ToolsLuncher {
+	private static String companyName = null;
 	private static Scanner scanner = new Scanner(System.in);
-	
+
 	public static void main(String[] args) {
+		
+		System.out.println(args.length);
+		companyName = args[0];
+
 		int choice = -1;
 		do {
-			 choice = printMenuAndCatchUserChoice();
-			 OperationType opType = OperationType.valueOf(choice);
-			 
-			 OperationSwitcher.switchTo(opType);
-			
+			choice = printMenuAndCatchUserChoice();
+			OperationType opType = OperationType.valueOf(choice);
+
+			OperationSwitcher.switchTo(opType);
+
 		} while (choice != 0);
 		scanner.close();
 		Operation.scanner.close();
@@ -26,6 +32,8 @@ public class ToolsLuncher {
 	 * @return
 	 */
 	private static int printMenuAndCatchUserChoice() {
+		System.out.println("*************************" + companyName + "************************************");
+
 		System.out.println("\n\n\n\n");
 		System.out.println("*****************************************************************");
 		System.out.println("Bienvenue à l’application : ‘’ Opérations Mathématiques ‘’");
@@ -38,7 +46,7 @@ public class ToolsLuncher {
 		System.out.println("\t- List of Persons                 \t\t\tTapez 6");
 		System.out.println("\t- Quitter                         \t\t\tTapez 0");
 		System.out.print("\t\t\tFaites votre choix : ");
-		
+
 		int choice = scanner.nextInt();
 		System.out.println("*****************************************************************");
 		return choice;
