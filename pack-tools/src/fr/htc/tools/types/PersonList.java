@@ -9,14 +9,21 @@ public class PersonList implements Operation {
 
 	@Override
 	public void process(String title) {
+		
 		System.out.println("Je suis dans le choix : " + title);
+		
 		System.out.print("Entrer le nombre de personnes : ");
+		
 		int nbPerson = scanner.nextInt();
 
 		List<Person> personList = new ArrayList<Person>();
+		
 		for (int i = 0; i < nbPerson; i++) {
+		
 			System.out.println("\nSaisie de la person N° " + i + 1);
+			
 			Person p = catchPersonFromInputUser();
+			
 			personList.add(p);
 
 		}
@@ -26,8 +33,11 @@ public class PersonList implements Operation {
 	}
 
 	private void printAllPersons(List<Person> personList) {
+		
 		for (Person person : personList) {
-			person.print();
+		
+			System.out.println(person);
+			
 		}
 		
 	}
@@ -40,16 +50,16 @@ public class PersonList implements Operation {
 		Person input = new Person();
 
 		System.out.print("Nom : ");
-		input.nom = scanner.next();
+		input.setNom(scanner.next());
 
 		System.out.print("Prenom : ");
-		input.prenom = scanner.next();
+		input.setPrenom(scanner.next());
 
 		System.out.print("Age : ");
-		input.age = scanner.nextInt();
+		input.setAge(scanner.nextInt());
 
 		return input;
-	}
+		}
 	
 	/**
 	 * 

@@ -8,25 +8,42 @@ import fr.htc.tools.types.enums.OperationType;
 
 public class ToolsLuncher {
 	private static String companyName = null;
-	private static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		
-		System.out.println(args.length);
-		companyName = args[0];
-
+		setCompanyName(args);
 		int choice = -1;
 		do {
 			choice = printMenuAndCatchUserChoice();
-			OperationType opType = OperationType.valueOf(choice);
+			OperationSwitcher.switchTo(choice);
+		} while (choice != 0 && pressAnyKeyToContinue());
+		cleanUp();
+	}
 
-			OperationSwitcher.switchTo(opType);
+	private static void setCompanyName(String[] args) {
+		// TODO Auto-generated method stub
+		if (args.length != 0) {
+			companyName = args[0];
+		}
+	}
 
-		} while (choice != 0);
-		scanner.close();
+	private static void cleanUp() {
+		// TODO Auto-generated method stub
 		Operation.scanner.close();
 	}
 
+	private static boolean pressAnyKeyToContinue() {
+		// TODO Auto-generated method stub
+		System.out.println("Press Enter key to continue...");
+		try {
+			System.in.read();
+			return true;
+		} catch (Exception e) {
+			System.out.println("error");
+			return true;
+		}
+		}
+ 
 	/**
 	 * 
 	 * @return
@@ -47,7 +64,7 @@ public class ToolsLuncher {
 		System.out.println("\t- Quitter                         \t\t\tTapez 0");
 		System.out.print("\t\t\tFaites votre choix : ");
 
-		int choice = scanner.nextInt();
+		int choice = Operation.scanner.nextInt();
 		System.out.println("*****************************************************************");
 		return choice;
 	}
